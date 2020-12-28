@@ -1,0 +1,1 @@
+<view class="painter _div data-v-8c67a0ae"><mp-painter vue-id="7fba467d-1" palette="{{customData}}" data-event-opts="{{[['^imgOK',[['onImgOK']]],['^imgErr',[['onImgErr']]]]}}" data-com-type="wx" bind:imgOK="__e" bind:imgErr="__e" class="data-v-8c67a0ae" bind:__l="__l"></mp-painter></view>

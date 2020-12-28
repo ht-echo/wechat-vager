@@ -1,22 +1,31 @@
-import Vue from 'vue'
-import App from './App'
+import Vue from "vue";
+import App from "./App";
+import store from "./store/index";
+//--------------------
+//----华丽的分割线-----
+//--------------------
+import Toast from "./wxcomponents/vant/weapp/toast/toast";
+Vue.prototype.$Toast = Toast;
 
-import store from './store'
+Vue.config.productionTip = false;
+App.mpType = "app";
+Vue.prototype.$timeFormat = timeFormat;
+function timeFormat(timestamp) {
+  let mistiming = Math.round(new Date() / 1000) - timestamp;
+  let postfix = mistiming > 0 ? "前" : "后";
+  mistiming = Math.abs(mistiming);
+  let arrr = ["年", "个月", "星期", "天", "小时", "分钟", "秒"];
+  let arrn = [31536000, 2592000, 604800, 86400, 3600, 60, 1];
 
-Vue.config.productionTip = false
-
-Vue.prototype.$store = store
-Vue.prototype.$backgroundAudioData = {
-	playing: false,
-	playTime: 0,
-	formatedPlayTime: '00:00:00'
+  for (let i = 0; i < 7; i++) {
+    let inm = Math.floor(mistiming / arrn[i]);
+    if (inm != 0) {
+      return inm + arrr[i] + postfix;
+    }
+  }
 }
-Vue.prototype.$adpid = "1111111111"
-
-App.mpType = 'app'
-
 const app = new Vue({
-	store,
-	...App
-})
-app.$mount()
+  ...App,
+  store,
+});
+app.$mount();

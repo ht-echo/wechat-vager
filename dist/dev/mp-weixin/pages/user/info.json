@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "info",
+  "navigationBarBackgroundColor": "#2d8cf0",
+  "usingComponents": {
+    "painter": "/components/repo/painter"
+  }
+}

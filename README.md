@@ -1,4 +1,4 @@
-# vager-demo
+# my-project
 
 ## Project setup
 ```

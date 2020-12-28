@@ -1,0 +1,62 @@
+.login.data-v-157e2966 {
+  height: 750rpx;
+}
+.login .bg-top.data-v-157e2966 {
+  height: 400rpx;
+  background: #2d8cf0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.login .bg-top .bg-img.data-v-157e2966 {
+  width: 200rpx;
+  height: 166rpx;
+}
+.login .login-tabsBox.data-v-157e2966 {
+  margin: -100rpx 50rpx 0;
+  background: #fff;
+  padding: 0 20rpx 20rpx;
+  box-shadow: 0 0 10rpx 0 rgba(0, 0, 0, 0.05);
+}
+.login .login-tabsBox .login-info.data-v-157e2966 {
+  margin: 20rpx 0 10rpx;
+}
+.login .login-tabsBox .tabs-btnBox.data-v-157e2966 {
+  margin-top: 18rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.login .login-tabsBox .tabs-btnBox.data-v-157e2966 .tabs-btn {
+  width: 480rpx !important;
+  margin-bottom: 20rpx;
+}
+.login .clone-text.data-v-157e2966 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  padding-top: 100rpx;
+}
+.login .clone-text .text-info.data-v-157e2966 {
+  color: #2d8cf0;
+}
+

@@ -1,0 +1,26 @@
+.reps .reps_box.data-v-115372b6 {
+  box-sizing: border-box;
+  background: #fff;
+  margin: 20rpx 20rpx 0;
+  padding: 20rpx;
+  line-height: 48rpx;
+}
+.reps .reps_box .title.data-v-115372b6 {
+  color: #323233;
+  font-size: 28rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.reps .reps_box .des.data-v-115372b6 {
+  color: #969799;
+  font-size: 24rpx;
+}
+.reps .reps_box .updateTime.data-v-115372b6 {
+  font-size: 24rpx;
+  color: #909399;
+}
+
