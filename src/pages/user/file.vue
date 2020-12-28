@@ -19,7 +19,7 @@ export default {
   },
   async onLoad(e) {
     let { statusCode, data } = await getBlob(e, {
-        access_token: e.access_token,
+       access_token: e.access_token,
     });
     if (statusCode == 200) {
       this.info = data;
