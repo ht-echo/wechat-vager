@@ -35,7 +35,7 @@
       </van-grid>
       <div class="paddingDiv"></div>
       <van-cell-group>
-        <van-cell title="拥有者" :value="reposInfo.owner.login" />
+        <van-cell title="拥有者" :value="reposInfo.owner.name" />
         <van-cell @click="viewCode" title="查看代码" is-link />
         <van-cell title="默认分支" :value="reposInfo.default_branch" />
         <van-cell
@@ -100,11 +100,18 @@ export default {
   },
   methods: {
     async viewCode() {
+      console.log("this.reposInfo", this.reposInfo);
+
       let params = {
         access_token: this.userToken,
-        owner: this.reposInfo.owner.login,
-        repo: this.reposInfo.path,
+        full_name: this.reposInfo.full_name.substring(
+          0,
+          this.reposInfo.full_name.indexOf("/")
+        ),
+        file: this.reposInfo.path,
+        path: this.reposInfo.path,
         sha: this.reposInfo.default_branch,
+        type: "tree",
       };
       uni.setStorage({
         key: "codeParams",

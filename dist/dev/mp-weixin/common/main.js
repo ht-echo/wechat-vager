@@ -30,6 +30,26 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 _vue.default.prototype.$Toast = _toast.default;
 _vue.default.config.productionTip = false;
 _App.default.mpType = "app";
+_vue.default.prototype.towxml = __webpack_require__(/*! ./wxcomponents/custom/towxml/index.js */ 17); // 增加一个名为 isPicture 的函数作为
+// String 构造函数的原型对象的一个方法。
+
+String.prototype.$isPicture = function () {
+  //判断是否是图片 - strFilter必须是小写列举
+  var strFilter = ".jpeg|.gif|.jpg|.png|.bmp|.pic|.svg|";
+
+  if (this.indexOf(".") > -1) {
+    var p = this.lastIndexOf(".");
+    var strPostfix = this.substring(p, this.length) + "|";
+    strPostfix = strPostfix.toLowerCase();
+
+    if (strFilter.indexOf(strPostfix) > -1) {
+      return true;
+    }
+  }
+
+  return false;
+};
+
 _vue.default.prototype.$timeFormat = timeFormat;
 
 function timeFormat(timestamp) {

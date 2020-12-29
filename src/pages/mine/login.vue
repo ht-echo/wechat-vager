@@ -63,7 +63,7 @@
       </van-tabs>
     </div>
     <div class="clone-text" @click="paste(getGiteeToken)">
-      <span>点击复制</span>
+      <span>点击复制，打开浏览器，按流程创建token</span>
       <span class="text-info">{{ getGiteeToken }}</span>
     </div>
   </view>
@@ -108,15 +108,13 @@ export default {
             type: "success",
             message: "登录成功",
           });
-          setTimeout(() => {
-            this.setUserInfo({
-              ...data,
-              ...{ userToken: this.token, isLogin: true },
-            });
-            uni.switchTab({
-              url: "/pages/mine/mine",
-            });
-          }, 500);
+          await this.setUserInfo({
+            ...data,
+            ...{ userToken: this.token, isLogin: true },
+          });
+          uni.switchTab({
+            url: "/pages/mine/mine",
+          });
         } else {
           Notify({
             type: "warning",

@@ -56,14 +56,12 @@
           is-link
           title="star的仓库"
           link-type="navigateTo"
-          url="/pages/dashboard/index"
         />
         <van-cell
           @click="toNodataPage"
           is-link
           title="issues"
           link-type="navigateTo"
-          url="/pages/dashboard/index"
         />
       </van-cell-group>
       <van-cell-group custom-class="cell-top">
@@ -244,7 +242,7 @@ export default {
 <style lang="less" scoped>
 .toLogin {
   height: 750rpx;
- /deep/ .blogClass {
+  /deep/ .blogClass {
     color: #1989fa;
   }
   .commonBorder {

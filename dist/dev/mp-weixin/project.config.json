@@ -11,23 +11,21 @@
   "libVersion": "",
   "appid": "wx409fbf52ca1a0c9e",
   "projectname": "vager-demo",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
   "condition": {
     "search": {
-      "current": -1,
       "list": []
     },
     "conversation": {
-      "current": -1,
       "list": []
     },
     "game": {
-      "current": -1,
       "list": []
     },
     "miniprogram": {
-      "current": -1,
       "list": []
     }
-  },
-  "cloudfunctionRoot": "./cloudfunctions/"
+  }
 }

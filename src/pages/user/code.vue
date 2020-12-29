@@ -2,8 +2,9 @@
   <div class="code">
     <div v-for="item in codeData" :key="item.sha">
       <van-cell
-        @click="getCodeData(item, item.type)"
+        @click="getCodeData(item)"
         :title="item.path"
+        :icon="item.type == 'tree' ? folderUrl : fileUrl"
         :is-link="item.type == 'tree'"
       />
       <div class="bgdiv"></div>
@@ -17,35 +18,39 @@ import qs from "qs";
 export default {
   data() {
     return {
+      folderUrl: require("../../static/images/folder.png"),
+      fileUrl: require("../../static/images/file.png"),
       codeData: [],
       codeParams: {},
     };
   },
   async onLoad(e) {
+    console.log("e", e);
     this.codeParams = e;
-    setTimeout(() => {
-      this.getCodeData(e);
-    }, 300);
+    this.getData();
   },
   methods: {
-    async getCodeData(e, type) {
-      console.log("getCodeData", type);
-      let params = e;
-      if (type == "tree") {
-        params = { ...this.codeParams, ...{ sha: e.sha } };
-        console.log("params", params);
+    async getCodeData(e) {
+      console.log("getCodeData", e.type);
+      this.codeParams = {
+        ...this.codeParams,
+        ...e,
+      };
+      if (e.type == "tree") {
         await uni.navigateTo({
-          url: `/pages/user/code?` + qs.stringify(params),
+          url: `/pages/user/code?` + qs.stringify(this.codeParams),
         });
-        return;
-      } else if (type == "blob") {
-        params = { ...this.codeParams, ...{ sha: e.sha } };
+      } else if (e.type == "blob") {
         await uni.navigateTo({
-          url: `/pages/user/file?` + qs.stringify(params),
+          url: `/pages/user/file?` + qs.stringify(this.codeParams),
         });
-        return;
       }
-      let { statusCode, data } = await getCode(params, {
+    },
+    async getData() {
+      uni.setNavigationBarTitle({
+        title: this.codeParams.path,
+      });
+      let { statusCode, data } = await getCode(this.codeParams, {
         access_token: this.codeParams.access_token,
       });
       if (statusCode == 200) {

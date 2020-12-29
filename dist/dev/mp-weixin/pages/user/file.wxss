@@ -1,8 +1,244 @@
+/**
+ * author: Di (微信小程序开发工程师)
+ * organization: WeAppDev(微信小程序开发论坛)(http://weappdev.com)
+ *         垂直微信小程序开发交流社区
+ *
+ * github地址: https://github.com/icindy/wxParse
+ *
+ * for: 微信小程序富文本解析
+ * detail : http://weappdev.com/t/wxparse-alpha0-1-html-markdown/184
+ */
+.wxParse.data-v-b86e95d2 {
+  width: 100%;
+  font-family: Helvetica, sans-serif;
+  font-size: 30rpx;
+  color: #666;
+  line-height: 1.8;
+}
+.wxParse view.data-v-b86e95d2 {
+  word-break: hyphenate;
+}
+.wxParse .inline.data-v-b86e95d2 {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+.wxParse .div.data-v-b86e95d2 {
+  margin: 0;
+  padding: 0;
+}
+.wxParse .h1 .text.data-v-b86e95d2 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+.wxParse .h2 .text.data-v-b86e95d2 {
+  font-size: 1.5em;
+  margin: 0.83em 0;
+}
+.wxParse .h3 .text.data-v-b86e95d2 {
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+.wxParse .h4 .text.data-v-b86e95d2 {
+  margin: 1.33em 0;
+}
+.wxParse .h5 .text.data-v-b86e95d2 {
+  font-size: 0.83em;
+  margin: 1.67em 0;
+}
+.wxParse .h6 .text.data-v-b86e95d2 {
+  font-size: 0.67em;
+  margin: 2.33em 0;
+}
+.wxParse .h1 .text.data-v-b86e95d2,
+.wxParse .h2 .text.data-v-b86e95d2,
+.wxParse .h3 .text.data-v-b86e95d2,
+.wxParse .h4 .text.data-v-b86e95d2,
+.wxParse .h5 .text.data-v-b86e95d2,
+.wxParse .h6 .text.data-v-b86e95d2,
+.wxParse .b.data-v-b86e95d2,
+.wxParse .strong.data-v-b86e95d2 {
+  font-weight: bolder;
+}
+.wxParse .p.data-v-b86e95d2 {
+  margin: 1em 0;
+}
+.wxParse .i.data-v-b86e95d2,
+.wxParse .cite.data-v-b86e95d2,
+.wxParse .em.data-v-b86e95d2,
+.wxParse .var.data-v-b86e95d2,
+.wxParse .address.data-v-b86e95d2 {
+  font-style: italic;
+}
+.wxParse .pre.data-v-b86e95d2,
+.wxParse .tt.data-v-b86e95d2,
+.wxParse .code.data-v-b86e95d2,
+.wxParse .kbd.data-v-b86e95d2,
+.wxParse .samp.data-v-b86e95d2 {
+  font-family: monospace;
+}
+.wxParse .pre.data-v-b86e95d2 {
+  overflow: auto;
+  background: #f5f5f5;
+  padding: 16rpx;
+  white-space: pre;
+  margin: 1em 0rpx;
+}
+.wxParse .code.data-v-b86e95d2 {
+  display: inline;
+  background: #f5f5f5;
+}
+.wxParse .big.data-v-b86e95d2 {
+  font-size: 1.17em;
+}
+.wxParse .small.data-v-b86e95d2,
+.wxParse .sub.data-v-b86e95d2,
+.wxParse .sup.data-v-b86e95d2 {
+  font-size: 0.83em;
+}
+.wxParse .sub.data-v-b86e95d2 {
+  vertical-align: sub;
+}
+.wxParse .sup.data-v-b86e95d2 {
+  vertical-align: super;
+}
+.wxParse .s.data-v-b86e95d2,
+.wxParse .strike.data-v-b86e95d2,
+.wxParse .del.data-v-b86e95d2 {
+  text-decoration: line-through;
+}
+.wxParse .strong.data-v-b86e95d2,
+.wxParse .s.data-v-b86e95d2 {
+  display: inline;
+}
+.wxParse .a.data-v-b86e95d2 {
+  color: deepskyblue;
+}
+.wxParse .video.data-v-b86e95d2 {
+  text-align: center;
+  margin: 22rpx 0;
+}
+.wxParse .video-video.data-v-b86e95d2 {
+  width: 100%;
+}
+.wxParse .img.data-v-b86e95d2 {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+.wxParse .blockquote.data-v-b86e95d2 {
+  margin: 10rpx 0;
+  padding: 22rpx 0 22rpx 22rpx;
+  font-family: Courier, Calibri, "宋体";
+  background: #f5f5f5;
+  border-left: 6rpx solid #dbdbdb;
+}
+.wxParse .blockquote .p.data-v-b86e95d2 {
+  margin: 0;
+}
+.wxParse .ul.data-v-b86e95d2, .wxParse .ol.data-v-b86e95d2 {
+  display: block;
+  margin: 1em 0;
+  padding-left: 33rpx;
+}
+.wxParse .ol.data-v-b86e95d2 {
+  list-style-type: disc;
+}
+.wxParse .ol.data-v-b86e95d2 {
+  list-style-type: decimal;
+}
+.wxParse .ol>weixin-parse-template.data-v-b86e95d2,.wxParse .ul>weixin-parse-template.data-v-b86e95d2 {
+  display: list-item;
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+          align-items: baseline;
+  text-align: match-parent;
+}
+.wxParse .ol>.li.data-v-b86e95d2,.wxParse .ul>.li.data-v-b86e95d2 {
+  display: list-item;
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+          align-items: baseline;
+  text-align: match-parent;
+}
+.wxParse .ul .ul.data-v-b86e95d2, .wxParse .ol .ul.data-v-b86e95d2 {
+  list-style-type: circle;
+}
+.wxParse .ol .ol .ul.data-v-b86e95d2, .wxParse .ol .ul .ul.data-v-b86e95d2, .wxParse .ul .ol .ul.data-v-b86e95d2, .wxParse .ul .ul .ul.data-v-b86e95d2 {
+    list-style-type: square;
+}
+.wxParse .u.data-v-b86e95d2 {
+  text-decoration: underline;
+}
+.wxParse .hide.data-v-b86e95d2 {
+  display: none;
+}
+.wxParse .del.data-v-b86e95d2 {
+  display: inline;
+}
+.wxParse .figure.data-v-b86e95d2 {
+  overflow: hidden;
+}
+.wxParse .table.data-v-b86e95d2 {
+  width: 100%;
+}
+.wxParse .thead.data-v-b86e95d2, .wxParse .tfoot.data-v-b86e95d2, .wxParse .tr.data-v-b86e95d2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+}
+.wxParse .tr.data-v-b86e95d2 {
+  width:100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  border-right: 2rpx solid #e0e0e0;
+  border-bottom: 2rpx solid #e0e0e0;
+}
+.wxParse .th.data-v-b86e95d2,
+.wxParse .td.data-v-b86e95d2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  width: 1276rpx;
+  overflow: auto;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  padding: 11rpx;
+  border-left: 2rpx solid #e0e0e0;
+}
+.wxParse .td.data-v-b86e95d2:last {
+  border-top: 2rpx solid #e0e0e0;
+}
+.wxParse .th.data-v-b86e95d2 {
+  background: #f0f0f0;
+  border-top: 2rpx solid #e0e0e0;
+}
 .file.data-v-b86e95d2 {
   padding: 20rpx;
-  background: #fff;
+  background: #f8f8f8;
 }
 .file .info.data-v-b86e95d2 {
-  padding: 20rpx;
+  background: #fff;
+}
+.file .info .imgBox.data-v-b86e95d2 {
+  background: #f8f8f8;
+  height: 400rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
 }
 

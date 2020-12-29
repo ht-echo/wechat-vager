@@ -49,14 +49,14 @@
     {
       "path": "pages/user/code",
       "style": {
-        "navigationBarTitleText": "code",
+        "navigationBarTitleText": "",
         "navigationBarBackgroundColor": "#fff"
       }
     },
     {
       "path": "pages/user/file",
       "style": {
-        "navigationBarTitleText": "file",
+        "navigationBarTitleText": "",
         "navigationBarBackgroundColor": "#fff"
       }
     }
@@ -88,6 +88,8 @@
     "backgroundColor": "#F8F8F8",
     "enablePullDownRefresh": true,
     "usingComponents": {
+      "mp-painter": "/wxcomponents/custom/painter/painter",
+      "towxml": "/wxcomponents/custom/towxml/towxml",
       "van-button": "/wxcomponents/vant/weapp/button/index",
       "van-tab": "/wxcomponents/vant/weapp/tab/index",
       "van-tabs": "/wxcomponents/vant/weapp/tabs/index",
@@ -110,7 +112,6 @@
       "van-grid-item": "/wxcomponents/vant/weapp/grid-item/index",
       "van-loading": "/wxcomponents/vant/weapp/loading/index",
       "van-overlay": "/wxcomponents/vant/weapp/overlay/index",
-      "mp-painter": "/wxcomponents/custom/painter/painter",
       "van-share-sheet": "/wxcomponents/vant/weapp/share-sheet/index"
     }
   }

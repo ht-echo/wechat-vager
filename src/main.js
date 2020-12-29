@@ -9,6 +9,22 @@ Vue.prototype.$Toast = Toast;
 
 Vue.config.productionTip = false;
 App.mpType = "app";
+Vue.prototype.towxml = require("./wxcomponents/custom/towxml/index.js");
+// 增加一个名为 isPicture 的函数作为
+// String 构造函数的原型对象的一个方法。
+String.prototype.$isPicture = function() {
+  //判断是否是图片 - strFilter必须是小写列举
+  var strFilter = ".jpeg|.gif|.jpg|.png|.bmp|.pic|.svg|";
+  if (this.indexOf(".") > -1) {
+    var p = this.lastIndexOf(".");
+    var strPostfix = this.substring(p, this.length) + "|";
+    strPostfix = strPostfix.toLowerCase();
+    if (strFilter.indexOf(strPostfix) > -1) {
+      return true;
+    }
+  }
+  return false;
+};
 Vue.prototype.$timeFormat = timeFormat;
 function timeFormat(timestamp) {
   let mistiming = Math.round(new Date() / 1000) - timestamp;
