@@ -14,9 +14,11 @@
       save
       @onPainterFinished="onPainterFinished"
     />
-    <van-overlay :show="overlayShow">
+    <van-overlay :zIndex="10" :show="overlayShow">
       <view class="wrapper">
-        <van-loading size="24px">加载中...</van-loading>
+        <van-loading custom-class="loadingBox" size="24px">
+          加载中...
+        </van-loading>
       </view>
     </van-overlay>
     <div class="info_head">
@@ -35,7 +37,7 @@
       </van-grid>
       <div class="paddingDiv"></div>
       <van-cell-group>
-        <van-cell title="拥有者" :value="reposInfo.owner.name" />
+        <van-cell title="拥有者" :value="reposInfo.owner.login" />
         <van-cell @click="viewCode" title="查看代码" is-link />
         <van-cell title="默认分支" :value="reposInfo.default_branch" />
         <van-cell
@@ -150,7 +152,6 @@ export default {
       console.log("saveImg");
       let that = this;
       const path = "/pages/user/repos";
-
       wx.cloud
         .callFunction({
           // 要调用的云函数名称
@@ -331,6 +332,12 @@ export default {
 
 <style lang="less" scoped>
 .user_info {
+  /deep/ .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
   .paddingDiv {
     height: 20rpx;
     background: transparent;

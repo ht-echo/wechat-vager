@@ -19,6 +19,8 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ./store/index */ 11)
 
 var _toast = _interopRequireDefault(__webpack_require__(/*! ./wxcomponents/vant/weapp/toast/toast */ 14));
 
+var _notify = _interopRequireDefault(__webpack_require__(/*! ./wxcomponents/vant/weapp/notify/notify */ 63));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -28,6 +30,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 _vue.default.prototype.$Toast = _toast.default;
+_vue.default.prototype.$Notify = _notify.default;
 _vue.default.config.productionTip = false;
 _App.default.mpType = "app";
 _vue.default.prototype.towxml = __webpack_require__(/*! ./wxcomponents/custom/towxml/index.js */ 17); // 增加一个名为 isPicture 的函数作为

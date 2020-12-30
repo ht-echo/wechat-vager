@@ -4,8 +4,9 @@
       <div class="imgBox" v-if="hasImg == true">
         <van-image width="50" height="50" v-if="imgUrl" :src="imgUrl" alt="" />
       </div>
-      <div class="textBox" v-if="hasImg == false">
-        <towxml :nodes="content" v-if="content" />
+      <div style="white-space:pre-wrap" class="textBox" v-if="hasImg == false">
+        <!-- <towxml :nodes="content" v-if="content" /> -->
+        {{ md }}
       </div>
     </div>
   </div>
@@ -23,11 +24,13 @@ export default {
       imgUrl: "",
       hasImg: false,
       content: "",
+      md: "",
     };
   },
   async onLoad(e) {
+    console.log("e.path", e.path);
     uni.setNavigationBarTitle({
-      title: e.path,
+      title: decodeURIComponent(e.path),
     });
     let { statusCode, data } = await getCode(e, {
       access_token: e.access_token,
@@ -40,6 +43,7 @@ export default {
         } else {
           this.hasImg = false;
           let md = base64_decode(data.content);
+          this.md = md;
           this.getWxml(md);
         }
       }
@@ -47,26 +51,30 @@ export default {
   },
   methods: {
     getWxml(res) {
-      this.content = this.towxml(res, "markdown");
-      console.log("this.content", this.content);
+      this.content = this.towxml(res, "markdown", {});
+      // console.log("this.content", this.content);
     },
   },
 };
 </script>
 
 <style lang="less" scoped>
-@import url("@/components/u-parse/u-parse.css");
 .file {
   padding: 20rpx;
   background: #f8f8f8;
   .info {
     background: #fff;
     .imgBox {
-      background: #f8f8f8;
+      background: #f1f1f1;
       height: 400rpx;
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+    .textBox {
+      padding: 20rpx;
+      line-height: 48rpx;
+      overflow-x: auto;
     }
   }
 }

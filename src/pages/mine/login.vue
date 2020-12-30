@@ -1,6 +1,6 @@
 <template>
   <view class="login">
-    <van-notify :id="notifyId" />
+    <van-notify id="van-notify" />
     <div class="bg-top">
       <image class="bg-img" v-if="bgImg" :src="bgImg"></image>
     </div>
@@ -71,13 +71,11 @@
 
 <script>
 import { getUser } from "@/apis/api";
-import Notify from "@/wxcomponents/vant/weapp/notify/notify";
 import { mapState, mapMutations } from "vuex";
 
 export default {
   data() {
     return {
-      notifyId: "van-notify",
       token: "",
       bgImg: "/static/images/octocat.png",
       activeName: "token",
@@ -103,8 +101,8 @@ export default {
         });
 
         // console.log(data);
-        if (statusCode == 200) {
-          Notify({
+        if (statusCode == 200 || statusCode == 304) {
+          this.$Notify({
             type: "success",
             message: "登录成功",
           });
@@ -112,14 +110,11 @@ export default {
             ...data,
             ...{ userToken: this.token, isLogin: true },
           });
-          uni.switchTab({
-            url: "/pages/mine/mine",
-          });
-        } else {
-          Notify({
-            type: "warning",
-            message: data.message,
-          });
+          setTimeout(() => {
+            uni.switchTab({
+              url: "/pages/mine/mine",
+            });
+          }, 600);
         }
       }
     },

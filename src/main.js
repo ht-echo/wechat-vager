@@ -6,6 +6,8 @@ import store from "./store/index";
 //--------------------
 import Toast from "./wxcomponents/vant/weapp/toast/toast";
 Vue.prototype.$Toast = Toast;
+import Notify from "./wxcomponents/vant/weapp/notify/notify";
+Vue.prototype.$Notify = Notify;
 
 Vue.config.productionTip = false;
 App.mpType = "app";
