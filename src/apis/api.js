@@ -8,3 +8,4 @@ export const getCode = (params, token) =>
     `/repos/${params.full_name}/${params.file}/git/${params.type}s/${params.sha}`,
     token
   );
+export const search = (params) => req.get(`/search/${params.type}`, params);

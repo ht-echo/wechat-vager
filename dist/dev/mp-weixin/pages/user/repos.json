@@ -1,5 +1,7 @@
 {
   "navigationBarTitleText": "repos",
   "navigationBarBackgroundColor": "#fff",
-  "usingComponents": {}
+  "usingComponents": {
+    "repo-list": "/components/repo/repoList"
+  }
 }

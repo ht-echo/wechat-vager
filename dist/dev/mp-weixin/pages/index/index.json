@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "ht-echo",
-  "usingComponents": {}
+  "usingComponents": {
+    "repo-list": "/components/repo/repoList"
+  }
 }

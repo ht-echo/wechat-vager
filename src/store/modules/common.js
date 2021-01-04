@@ -5,32 +5,46 @@ export default {
     reposInfo: {}, //其他信息
     isLogin: false,
     userToken: "",
+    lang: "",
+    setSerachValue: "-",
   },
   mutations: {
     setUserInfo(state, value) {
-      state.isLogin = true;
+      state.isLogin = value.isLogin;
       state.userToken = value.userToken;
+      state.userInfo = value;
       //设置用户信息
-      for (let key in value) {
-        Vue.set(state.userInfo, key, value[key]);
-      }
       uni.setStorage({
         key: "userInfo",
-        data: value,
+        data: state.userInfo,
       });
       uni.setStorage({
         key: "isLogin",
-        data: value.isLogin,
+        data: state.isLogin,
       });
       uni.setStorage({
         key: "userToken",
-        data: value.userToken,
+        data: state.userToken,
       });
     },
     setReposInfo(state, value) {
       state.reposInfo = value;
       uni.setStorage({
         key: "reposInfo",
+        data: value,
+      });
+    },
+    lang(state, value) {
+      state.lang = value;
+      uni.setStorage({
+        key: "lang",
+        data: value,
+      });
+    },
+    setSerachValue(state, value) {
+      state.setSerachValue = value;
+      uni.setStorage({
+        key: "setSerachValue",
         data: value,
       });
     },

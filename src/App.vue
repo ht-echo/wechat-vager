@@ -24,7 +24,7 @@ page {
   background: #f8f8f8;
   min-height: 100vh;
   box-sizing: border-box;
-  padding: 0 0 100rpx;
+  padding: 0 0 20rpx;
   -webkit-font-smoothing: antialiased;
   font-family: "PingFang SC", Helvetica, "STHeiti STXihei", "Microsoft YaHei",
     Tohoma, Arial, sans-serif;

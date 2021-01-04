@@ -1,37 +1,16 @@
 <template>
-  <div class="reps">
-    <div
-      @click="showMore(item)"
-      class="reps_box"
-      v-for="item in repoData"
-      :key="item.id"
-    >
-      <div class="title">
-        <van-icon
-          name="label"
-          size="28rpx"
-          color="#909399"
-          style="margin:10rpx"
-        />
-        {{ item.full_name }}
-      </div>
-      <div class="des">{{ item.description }}</div>
-      <div class="des" v-if="item.language != '' && item.language != null">
-        {{ item.language }}
-      </div>
-      <div class="updateTime">
-        {{ item.updated_at }}
-      </div>
-    </div>
-  </div>
+  <RepoList :repoData="repoData" />
 </template>
 
 <script>
 import moment from "moment";
 import { getUserRepos, getUserStarred } from "@/apis/api";
 import { mapState, mapMutations } from "vuex";
-
+import RepoList from "@/components/repo/repoList";
 export default {
+  components: {
+    RepoList,
+  },
   data() {
     return {
       repoData: [],
@@ -50,16 +29,6 @@ export default {
   },
   created() {},
   methods: {
-    ...mapMutations(["setReposInfo"]),
-
-    showMore(item) {
-      uni.navigateTo({
-        url: "/pages/user/info",
-        success: (data) => {
-          this.setReposInfo(item);
-        },
-      });
-    },
     async getData() {
       if (this.clickType == "user") {
         let { statusCode, data } = await getUserRepos({
@@ -94,27 +63,4 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.reps {
-  .reps_box {
-    box-sizing: border-box;
-    background: #fff;
-    margin: 20rpx 20rpx 0;
-    padding: 20rpx;
-    line-height: 48rpx;
-    .title {
-      color: #323233;
-      font-size: 28rpx;
-      display: flex;
-      align-items: center;
-    }
-    .des {
-      color: #969799;
-      font-size: 24rpx;
-    }
-    .updateTime {
-      font-size: 24rpx;
-      color: #909399;
-    }
-  }
-}
 </style>

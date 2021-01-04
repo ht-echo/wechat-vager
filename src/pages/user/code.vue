@@ -18,8 +18,8 @@ import qs from "qs";
 export default {
   data() {
     return {
-      folderUrl: require("../../static/images/folder.png"),
-      fileUrl: require("../../static/images/file.png"),
+      folderUrl: "idcard",
+      fileUrl: "description",
       codeData: [],
       codeParams: {},
     };

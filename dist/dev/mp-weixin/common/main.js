@@ -19,7 +19,7 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ./store/index */ 11)
 
 var _toast = _interopRequireDefault(__webpack_require__(/*! ./wxcomponents/vant/weapp/toast/toast */ 14));
 
-var _notify = _interopRequireDefault(__webpack_require__(/*! ./wxcomponents/vant/weapp/notify/notify */ 63));
+var _notify = _interopRequireDefault(__webpack_require__(/*! ./wxcomponents/vant/weapp/notify/notify */ 17));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -33,7 +33,7 @@ _vue.default.prototype.$Toast = _toast.default;
 _vue.default.prototype.$Notify = _notify.default;
 _vue.default.config.productionTip = false;
 _App.default.mpType = "app";
-_vue.default.prototype.towxml = __webpack_require__(/*! ./wxcomponents/custom/towxml/index.js */ 17); // 增加一个名为 isPicture 的函数作为
+_vue.default.prototype.towxml = __webpack_require__(/*! ./wxcomponents/custom/towxml/index.js */ 19); // 增加一个名为 isPicture 的函数作为
 // String 构造函数的原型对象的一个方法。
 
 String.prototype.$isPicture = function () {

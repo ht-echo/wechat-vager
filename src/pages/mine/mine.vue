@@ -14,99 +14,103 @@
       ></official-account>
     </van-popup>
     <van-dialog id="van-dialog" zIndex="9999" />
-    <view class="userInfo" v-if="isLogin == true">
-      <div class="head-info">
-        <van-image
-          class="headImg"
+    <block v-if="isLogin == true">
+      <view class="userInfo">
+        <div class="head-info">
+          <van-image
+            class="headImg"
+            round
+            width="100rpx"
+            height="100rpx"
+            :src="userInfo.avatar_url"
+          />
+          <div class="userName">{{ userInfo.name }}</div>
+          <div class="userName-Login">{{ "@" + userInfo.login }}</div>
+        </div>
+        <van-row custom-class="headTitle">
+          <van-col span="8" custom-class="headTitle-col">
+            <div @click="showRepos('user')" class="col-info">
+              <div class="value">{{ userInfo.public_repos }}</div>
+              <div class="label">Repos</div>
+            </div>
+            <div class="col-line"></div>
+          </van-col>
+
+          <van-col span="8" custom-class="headTitle-col">
+            <div @click="toNodataPage" class="col-info">
+              <div class="value">{{ userInfo.followers }}</div>
+              <div class="label">Followers</div>
+            </div>
+            <div class="col-line"></div>
+          </van-col>
+
+          <van-col span="8" custom-class="headTitle-col">
+            <div @click="toNodataPage" class="col-info">
+              <div class="value">{{ userInfo.following }}</div>
+              <div class="label">Following</div>
+            </div>
+          </van-col>
+        </van-row>
+        <van-cell-group custom-class="cell-top">
+          <van-cell
+            @click="showRepos('started')"
+            is-link
+            title="star的仓库"
+            link-type="navigateTo"
+          />
+          <van-cell
+            @click="toNodataPage"
+            is-link
+            title="issues"
+            link-type="navigateTo"
+          />
+        </van-cell-group>
+        <van-cell-group custom-class="cell-top">
+          <van-cell
+            title-width="150rpx"
+            title="邮箱"
+            :value="userInfo.email.length > 0 ? userInfo.email : '---'"
+          />
+          <van-cell
+            @click="copyBlog(userInfo.blog)"
+            title-width="150rpx"
+            title="博客"
+            value-class="blogClass"
+            :value="userInfo.blog.length > 0 ? userInfo.blog : '---'"
+          />
+          <van-cell
+            title-width="150rpx"
+            title="简介"
+            :value="userInfo.bio.length > 0 ? userInfo.bio : '---'"
+          />
+        </van-cell-group>
+        <van-cell-group custom-class="cell-top cell-bottom">
+          <van-cell
+            v-if="userInfo.login == 'ht-echo'"
+            @click="showAccountbox"
+            is-link
+            title="公众号"
+            link-type="navigateTo"
+            url="/pages/dashboard/index"
+          />
+          <van-cell is-link @click="logOut" title="退出登录" />
+        </van-cell-group>
+      </view>
+    </block>
+    <block v-else>
+      <view class="toLogin-btnBox">
+        <image class="bg-img" v-if="bgImg" :src="bgImg"></image>
+        <van-button
+          @click="toLogin"
+          custom-class="toLogin-btn"
           round
-          width="100rpx"
-          height="100rpx"
-          :src="userInfo.avatar_url"
-        />
-        <div class="userName">{{ userInfo.name }}</div>
-        <div class="userName-Login">{{ "@" + userInfo.login }}</div>
-      </div>
-      <van-row custom-class="headTitle">
-        <van-col span="8" custom-class="headTitle-col">
-          <div @click="showRepos('user')" class="col-info">
-            <div class="value">{{ userInfo.public_repos }}</div>
-            <div class="label">Repos</div>
-          </div>
-          <div class="col-line"></div>
-        </van-col>
-
-        <van-col span="8" custom-class="headTitle-col">
-          <div @click="toNodataPage" class="col-info">
-            <div class="value">{{ userInfo.followers }}</div>
-            <div class="label">Followers</div>
-          </div>
-          <div class="col-line"></div>
-        </van-col>
-
-        <van-col span="8" custom-class="headTitle-col">
-          <div @click="toNodataPage" class="col-info">
-            <div class="value">{{ userInfo.following }}</div>
-            <div class="label">Following</div>
-          </div>
-        </van-col>
-      </van-row>
-      <van-cell-group custom-class="cell-top">
-        <van-cell
-          @click="showRepos('started')"
-          is-link
-          title="star的仓库"
-          link-type="navigateTo"
-        />
-        <van-cell
-          @click="toNodataPage"
-          is-link
-          title="issues"
-          link-type="navigateTo"
-        />
-      </van-cell-group>
-      <van-cell-group custom-class="cell-top">
-        <van-cell
-          title-width="150rpx"
-          title="邮箱"
-          :value="userInfo.email.length > 0 ? userInfo.email : '---'"
-        />
-        <van-cell
-          @click="copyBlog(userInfo.blog)"
-          title-width="150rpx"
-          title="博客"
-          value-class="blogClass"
-          :value="userInfo.blog.length > 0 ? userInfo.blog : '---'"
-        />
-        <van-cell
-          title-width="150rpx"
-          title="简介"
-          :value="userInfo.bio.length > 0 ? userInfo.bio : '---'"
-        />
-      </van-cell-group>
-      <van-cell-group custom-class="cell-top cell-bottom">
-        <van-cell
-          v-if="userInfo.login == 'ht-echo'"
-          @click="showAccountbox"
-          is-link
-          title="公众号"
-          link-type="navigateTo"
-          url="/pages/dashboard/index"
-        />
-        <van-cell is-link @click="logOut" title="退出登录" />
-      </van-cell-group>
-    </view>
-    <view class="toLogin-btnBox" v-else>
-      <image class="bg-img" v-if="bgImg" :src="bgImg"></image>
-      <van-button
-        @click="toLogin"
-        custom-class="toLogin-btn"
-        round
-        color="#2d8cf0"
-        type="primary"
-      >
-        {{ inputName }}
-      </van-button>
-    </view>
+          color="#2d8cf0"
+          type="primary"
+        >
+          {{ inputName }}
+        </van-button>
+      </view>
+    </block>
   </view>
 </template>
 
@@ -117,6 +121,7 @@ import Dialog from "@/wxcomponents/vant/weapp/dialog/dialog";
 export default {
   data() {
     return {
+      isLogin: false,
       accountBoxshow: false,
       accountState: 5,
       userToken: "",
@@ -132,8 +137,11 @@ export default {
   onPullDownRefresh() {
     this.getData();
   },
-  onLoad() {},
+  onLoad() {
+    console.log("onLoad");
+  },
   onShow() {
+    console.log("onshow", uni.getStorageSync("isLogin"));
     uni.getStorage({
       key: "userToken",
       success: (res) => {
@@ -146,13 +154,23 @@ export default {
         this.userInfo = res.data;
       },
     });
-  },
-  computed: {
-    isLogin() {
-      return uni.getStorageSync("isLogin");
-    },
+    if (uni.getStorageSync("isLogin")) {
+      uni.getStorage({
+        key: "isLogin",
+        success: (res) => {
+          this.isLogin = res.data;
+        },
+      });
+    } else {
+      this.isLogin = false;
+    }
   },
   created() {},
+  computed: {
+    // isLogin() {
+    //   return uni.getStorageSync("isLogin");
+    // },
+  },
   methods: {
     ...mapMutations(["setUserInfo"]),
     toNodataPage() {
@@ -225,8 +243,13 @@ export default {
             uni.showTabBar({
               animation: true,
             });
-            this.setUserInfo({});
-            this.toLogin();
+            this.setUserInfo({
+              isLogin: false,
+              userToken: "",
+            });
+            uni.reLaunch({
+              url: "/pages/mine/mine",
+            });
           })
           .catch(() => {
             uni.showTabBar({

@@ -7,6 +7,20 @@
       }
     },
     {
+      "path": "pages/index/indexBar",
+      "style": {
+        "navigationBarTitleText": "languages",
+        "navigationBarBackgroundColor": "#fff"
+      }
+    },
+    {
+      "path": "pages/index/search",
+      "style": {
+        "navigationBarTitleText": "search",
+        "navigationBarBackgroundColor": "#fff"
+      }
+    },
+    {
       "path": "pages/article/article",
       "style": {
         "navigationBarTitleText": "article"
@@ -24,6 +38,12 @@
       "style": {
         "navigationBarTitleText": "mine",
         "navigationBarBackgroundColor": "#2d8cf0"
+      }
+    },
+    {
+      "path": "pages/mine/logOut",
+      "style": {
+        "navigationBarTitleText": ""
       }
     },
     {
@@ -71,10 +91,10 @@
         "pagePath": "pages/index/index",
         "text": "首页"
       },
-      {
-        "pagePath": "pages/article/article",
-        "text": "文章"
-      },
+      // {
+      //   "pagePath": "pages/article/article",
+      //   "text": "文章"
+      // },
       {
         "pagePath": "pages/mine/mine",
         "text": "我的"
@@ -87,6 +107,7 @@
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8",
     "enablePullDownRefresh": true,
+    "onReachBottomDistance": 50,
     "usingComponents": {
       "mp-painter": "/wxcomponents/custom/painter/painter",
       "towxml": "/wxcomponents/custom/towxml/towxml",
@@ -112,7 +133,14 @@
       "van-grid-item": "/wxcomponents/vant/weapp/grid-item/index",
       "van-loading": "/wxcomponents/vant/weapp/loading/index",
       "van-overlay": "/wxcomponents/vant/weapp/overlay/index",
-      "van-share-sheet": "/wxcomponents/vant/weapp/share-sheet/index"
+      "van-share-sheet": "/wxcomponents/vant/weapp/share-sheet/index",
+      "van-nav-bar": "/wxcomponents/vant/weapp/nav-bar/index",
+      "van-index-bar": "/wxcomponents/vant/weapp/index-bar/index",
+      "van-index-anchor": "/wxcomponents/vant/weapp/index-anchor/index",
+      "van-search": "/wxcomponents/vant/weapp/search/index",
+      "van-swipe-cell": "/wxcomponents/vant/weapp/swipe-cell/index",
+      "van-tag": "/wxcomponents/vant/weapp/tag/index",
+      "van-divider": "/wxcomponents/vant/weapp/divider/index"
     }
   }
 }

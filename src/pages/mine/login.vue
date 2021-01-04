@@ -85,6 +85,8 @@ export default {
       getGiteeToken: "https://gitee.com/profile/personal_access_tokens",
     };
   },
+  onLoad(option) {},
+  onShow() {},
   methods: {
     ...mapMutations(["setUserInfo"]),
 
@@ -110,11 +112,14 @@ export default {
             ...data,
             ...{ userToken: this.token, isLogin: true },
           });
-          setTimeout(() => {
-            uni.switchTab({
-              url: "/pages/mine/mine",
-            });
-          }, 600);
+          uni.switchTab({
+            url: "/pages/mine/mine",
+            success() {
+              let page = getCurrentPages().pop(); //跳转页面成功之后
+              if (!page) return;
+              page.onLoad(); //如果页面存在，则重新刷新页面
+            },
+          });
         }
       }
     },
