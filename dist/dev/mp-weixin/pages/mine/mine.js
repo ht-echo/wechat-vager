@@ -230,6 +230,7 @@ var _default = {
       });
     },
     bindState: function bindState(e) {
+      console.log(e.detail.statu);
       this.accountState = e.detail.status;
     },
     showRepos: function showRepos(type) {

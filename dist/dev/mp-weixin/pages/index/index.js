@@ -195,7 +195,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var RepoList = function RepoList() {
   Promise.all(/*! require.ensure | components/repo/repoList */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/repo/repoList")]).then((function () {
-    return resolve(__webpack_require__(/*! @/components/repo/repoList */ 286));
+    return resolve(__webpack_require__(/*! @/components/repo/repoList */ 290));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 

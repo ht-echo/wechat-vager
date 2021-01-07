@@ -86,7 +86,7 @@
         </van-cell-group>
         <van-cell-group custom-class="cell-top cell-bottom">
           <van-cell
-            v-if="userInfo.login == 'ht-echo'"
+            v-if="userInfo.login == 'ht-echo' && accountState == 0"
             @click="showAccountbox"
             is-link
             title="公众号"
@@ -184,6 +184,7 @@ export default {
       });
     },
     bindState(e) {
+      console.log(e.detail.statu);
       this.accountState = e.detail.status;
     },
     showRepos(type) {

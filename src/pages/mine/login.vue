@@ -11,11 +11,11 @@
         custom-class="login-tabs"
         type="line"
         color="#2d8cf0"
-        line-height="2px"
+        line-height="0px"
         swipeable
         :active="activeName"
       >
-        <van-tab title="Token" name="token">
+        <van-tab title="Token登录" name="token">
           <div class="login-info">
             <van-field
               @change="token = $event.mp.detail"
@@ -26,7 +26,7 @@
             />
           </div>
         </van-tab>
-        <van-tab title="账号" name="account">
+        <!-- <van-tab title="账号" name="account">
           <div class="login-info">
             <van-cell-group>
               <van-field
@@ -48,7 +48,7 @@
               />
             </van-cell-group>
           </div>
-        </van-tab>
+        </van-tab> -->
         <div class="tabs-btnBox">
           <van-button
             @click="loginFn"
